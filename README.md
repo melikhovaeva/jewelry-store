@@ -1,5 +1,4 @@
-# Getting Started with Create React App
-
+# Melikhova Eva-Sofia 221-322 group
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
