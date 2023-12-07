@@ -6,7 +6,7 @@ import University from './pages/university/university';
 import Catalog from './pages/catalog/catalog';
 import Navbar from './components/navbar/navbar';
 
-function App(): JSX.Element {
+export function App(): JSX.Element {
   const [isAuth, setIsAuth] = useState<boolean>(false);
 
   return (
@@ -30,4 +30,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+

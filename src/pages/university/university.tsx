@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'antd';
 import axios from 'axios';
-import './App.css';
+import './university.css';
 import type { ColumnsType } from 'antd/es/table';
 
 const University = () => {
