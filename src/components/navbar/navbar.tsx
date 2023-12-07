@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({ isAuth, setIsAuth }) => {
         <Link to="/">Main</Link>
         <Link to="/catalog">Catalog</Link>
         <Link to="/university">University</Link>
-        <Link to="/login">Login</Link>
+        <Link to="/blog">Blog</Link>
       </div>
       <div className="auth-button-container">
         <button onClick={handleAuthClick}>

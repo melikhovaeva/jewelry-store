@@ -1,4 +1,4 @@
-function Catalog(): JSX.Element {
+function Catalog(): React.ReactElement {
   return (
     <h1>Добро пожаловать на каталог!</h1>
   );

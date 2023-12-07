@@ -1,5 +1,5 @@
 export enum AppRoute {
-  Login = '/login',
+  Blog = '/blog',
   Root = '/',
   Catalog = '/catalog', 
   University = '/university'
