@@ -23,11 +23,12 @@ const University = () => {
     },
   ]
 
-  const [offset, setOffset] = useState<number>(0);
+
   const [page, setPage] = useState<number>(0);
   const [dataSource, setDataSource] = useState<DataType[]>();
 
-  const getUniversity = async (offset: number, limit: number) => {
+  const getUniversity = async (page: number, limit: number) => {
+    const offset = (page - 1)*limit
     const response = await axios.get(`http://universities.hipolabs.com/search?offset=${offset}&limit=${limit}`)
     setDataSource(response.data);
   }
@@ -35,18 +36,16 @@ const University = () => {
   const LIMIT_LIST_SCHOOL = 10
 
   useEffect(() => {
-    getUniversity(offset, LIMIT_LIST_SCHOOL)
-  }, [offset])
+    getUniversity(page, LIMIT_LIST_SCHOOL)
+  }, [page])
 
   return (
     <>
       <Table dataSource={dataSource} columns={columns} pagination={false}/>
       <Button onClick={() => {
-        setOffset(offset - LIMIT_LIST_SCHOOL)
         setPage(page - 1)
-      }} disabled={!offset}>Назад</Button>
+      }} disabled={page === 1}>Назад</Button>
       <Button onClick={() => {
-        setOffset(offset + LIMIT_LIST_SCHOOL)
         setPage(page + 1)
       }
       }>Вперед</Button>

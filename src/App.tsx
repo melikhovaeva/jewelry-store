@@ -11,7 +11,7 @@ export function App(): React.ReactElement {
   const [isAuth, setIsAuth] = useState<boolean>(false);
 
   return (
-    <BrowserRouter>
+    <>
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth} />
       <Routes>
         <Route 
@@ -35,7 +35,7 @@ export function App(): React.ReactElement {
           element={<Navigate to={'/'} replace />}
         />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
