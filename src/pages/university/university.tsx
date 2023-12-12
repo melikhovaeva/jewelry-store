@@ -49,7 +49,7 @@ const University = () => {
         setPage((page) => page + 1)
       }
       }>Вперед</Button>
-      <p>Текущая страница: {page + 1}</p>
+      <p className='page'>Текущая страница: {page + 1}</p>
     </>
   )
 }

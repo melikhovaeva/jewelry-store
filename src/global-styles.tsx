@@ -80,6 +80,10 @@ const GlobalStyles = createGlobalStyle`
           color: var(--white);
           border: none;
         }
+
+        .page {
+          color: var(--black);
+        }
     }
 
     html[data-theme=dark] {
@@ -114,6 +118,10 @@ const GlobalStyles = createGlobalStyle`
           background-color: var(--accent-dark);
           color: var(--white-dark);
           border: 1px solid var(--accent-dark);
+        }
+
+        .page {
+          color: var(--white-dark);
         }
     }
 
