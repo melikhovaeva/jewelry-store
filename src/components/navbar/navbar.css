@@ -1,39 +1,62 @@
-.navbar {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: #2c3e50; /* Цвет фона */
-  color: white;
 }
 
-.nav-links {
+.logo{
+  font-family: 'DMSans-Bold', sans-serif;
+  font-weight: 700;
+  text-decoration: none; 
+  color: var(--black);
+  transition: color 0.3s ease; 
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.logo__text {
+  color: var(--accent);
+}
+
+.nav__list {
   display: flex;
+  justify-content: space-around;
+  list-style: none;
+  min-width: 320px;
 }
 
-.nav-links a {
-  color: white;
+.nav__link {
+  font-family: 'DMSans-Regular', sans-serif;
   text-decoration: none;
-  margin-right: 15px;
-  font-size: 20px;
-  transition: color 0.3s ease;
+  padding: 10px;
+  color: var(--black);
+  transition: all 0.3s ease; 
 }
 
-.nav-links a:hover {
-  color: #3498db; 
+.nav__link:hover {
+  color: var(--accent);
+  border-bottom: 3px solid var(--black);
 }
 
-.auth-button-container button {
-  border-radius: 10px;
-  padding: 10px 15px;
-  background-color: #27ae60;
-  color: white;
+.nav__container{
+  display: flex;
+  justify-content: space-between;
+  min-width: 200px;
+}
+
+.nav__button {
+  padding: 4px 15px;
+  border-radius: 6px;
+  height: 32px;
+  background-color: var(--black);
+  color: var(--white);
   border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease; 
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.auth-button-container button:hover {
-  background-color: #219653;
+.nav__button:hover {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
 }

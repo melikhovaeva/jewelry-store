@@ -43,13 +43,13 @@ const University = () => {
     <>
       <Table dataSource={dataSource} columns={columns} pagination={false}/>
       <Button onClick={() => {
-        setPage(page - 1)
+        setPage((page) => page - 1)
       }} disabled={page === 1}>Назад</Button>
       <Button onClick={() => {
-        setPage(page + 1)
+        setPage((page) => page + 1)
       }
       }>Вперед</Button>
-      <p>Текущая страница: {page + 1}</p>
+      <p className='page'>Текущая страница: {page + 1}</p>
     </>
   )
 }

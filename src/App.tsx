@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppRoute } from './components/const';
 import Root from './pages/root/root';
 import University from './pages/university/university';
 import Catalog from './pages/catalog/catalog';
 import Navbar from './components/navbar/navbar';
 import Blog from './pages/blog/blog';
+import Story from './pages/story/story';
 
 export function App(): React.ReactElement {
   const [isAuth, setIsAuth] = useState<boolean>(false);
@@ -29,6 +30,10 @@ export function App(): React.ReactElement {
         <Route 
           path={AppRoute.Blog} 
           element={<Blog />}
+        />
+        <Route 
+          path={AppRoute.Story} 
+          element={<Story />}
         />
         <Route 
           path='*'
