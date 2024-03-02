@@ -1,22 +1,16 @@
 import { useState } from 'react';
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer'; 
-import { SubmitHandler, useForm } from "react-hook-form";
-import { PDFViewer } from '@react-pdf/renderer'; 
+import { Page, Text, View, Document, PDFDownloadLink, Image } from '@react-pdf/renderer'; 
+import { useForm } from "react-hook-form";
+import { styles } from './style';
+import { IMyForm } from './types';
  
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4'
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1
-  }
-});
+interface IMyDocumentProps {
+  name: string;
+  picture: string;
+}
 
-const MyDocument:React.FC<Props> = ({name}) => {
+const MyDocument:React.FC<IMyDocumentProps> = ({name, picture}) => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -26,35 +20,28 @@ const MyDocument:React.FC<Props> = ({name}) => {
         <View style={styles.section}>
           <Text>Section #2</Text>
         </View>
+        <View style={styles.section}>
+          {picture && <Image src={`data:image/jpg;base64,${picture}`} />}
+        </View>
       </Page>
     </Document>
   )
 }
 
-interface IMyForm {
-  name: string;
-  picture: File;
-}
-
-interface Props {
-  name: string;
-}
 
 const App = () => {
   const [task, setTask] = useState<IMyForm>()
 
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset
+      register,
+      handleSubmit,
+      formState: {errors},
   } = useForm<IMyForm>({
-    mode: "onBlur",
+      mode: "onBlur",
   })
 
   const saveElement = (data: IMyForm) => {
-    setTask(data)
-    reset();
+      setTask(data)
   }
 
   return (
@@ -70,13 +57,27 @@ const App = () => {
           }
           )}
         />
-
+        <input
+          type="file"
+          accept="image/*"
+          {...register("picture", {
+              required: "Загрузите изображение"
+          })}
+        />
         <div>{errors.name?.message}</div>
+        <div>{errors.picture?.message}</div>
         <button type="submit">Сохранить</button>
       </form>
       {
         !!task?.name &&
-        <PDFDownloadLink document={<MyDocument name={task.name}/>} fileName="somename.pdf">
+        <PDFDownloadLink
+          document={
+            <MyDocument
+              name={task.name}
+              picture={task.picture}
+            />
+          } 
+          fileName="somename.pdf">
           {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
         </PDFDownloadLink>
       }

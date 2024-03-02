@@ -5,7 +5,7 @@ import Root from './pages/root/root';
 import University from './pages/university/university';
 import Catalog from './pages/catalog/catalog';
 import Navbar from './components/navbar/navbar';
-import Blog from './pages/blog/blog';
+import Blog from './pages/Blog';
 import Story from './pages/story/story';
 
 export function App(): React.ReactElement {
