@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
-import { AppRoute } from '../const';
+import { AppRoute } from '..';
 import styled from 'styled-components';
 import { Button } from 'antd';
 

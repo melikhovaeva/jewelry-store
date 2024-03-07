@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { AppRoute } from './components/const';
-import Root from './pages/root/root';
-import University from './pages/university/university';
-import Catalog from './pages/catalog/catalog';
-import Navbar from './components/navbar/navbar';
+import { AppRoute } from './components';
+import Root from './pages/Root/root';
+import University from './pages/University/university';
+import Catalog from './pages/Catalog/catalog';
+import Navbar from './components/Navbar/navbar';
 import Blog from './pages/Blog';
-import Story from './pages/story/story';
+import Story from './pages/Story/story';
 
 export function App(): React.ReactElement {
   const [isAuth, setIsAuth] = useState<boolean>(false);
