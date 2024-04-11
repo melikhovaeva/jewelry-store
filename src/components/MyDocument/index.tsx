@@ -15,9 +15,7 @@ const MyDocument: React.FC<IDocumentProps> = ({ name, picture }) => {
         <View style={styles.section}>
           <Text>{name}</Text>
         </View>
-        <View style={styles.section}>
-          {pictureUrl && <Image src={pictureUrl} />}
-        </View>
+        <View style={styles.section}>{pictureUrl && <Image src={pictureUrl} />}</View>
       </Page>
     </Document>
   );
