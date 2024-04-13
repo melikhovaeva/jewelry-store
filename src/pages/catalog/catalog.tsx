@@ -1,7 +1,12 @@
-function Catalog(): React.ReactElement {
-  return (
-    <h1>Добро пожаловать на каталог!</h1>
-  );
-}
+import React from "react";
+import DynamicPagination from "../../components/DynamicPagination";
 
+const Catalog = () => {
+    return ( 
+        <>
+            <DynamicPagination/>  
+        </>
+     );
+}
+ 
 export default Catalog;
