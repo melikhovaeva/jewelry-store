@@ -38,10 +38,7 @@ const Blog = () => {
         <Button type="submit">Сохранить</Button>
       </Form>
       {task?.name && task?.picture && (
-        <DownloadLink
-          document={<MyDocument name={task.name} picture={task.picture} />}
-          fileName="form.pdf"
-        >
+        <DownloadLink document={<MyDocument name={task.name} picture={task.picture} />} fileName="form.pdf">
           {({ loading, error }) => {
             try {
               if (loading) return "Загрузка...";

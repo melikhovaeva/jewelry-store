@@ -8,7 +8,7 @@ import { BlockOnserver, DynamicPaginationContainer, LoadingText } from "./style"
 const LIMIT_UNIVERSITIES = 10;
 
 const DynamicPagination: FC = () => {
-  const [universities, setUniversities] = useState<Array<[IUniversity]>>([]);
+  const [universities, setUniversities] = useState<IUniversity[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
